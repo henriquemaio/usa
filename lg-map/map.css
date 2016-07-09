@@ -1,0 +1,464 @@
+/* ------ map
+-----------------------------------------------*/
+
+.lg-map-wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+#lg-map {
+  position: relative !important;
+  margin: auto;
+}
+
+
+/*
+.lg-map-wrapper #lg-map {
+  float:left;
+  clear:both;
+}
+*/
+
+.lg-map-wrapper .lg-map-text {
+  /*  float:left;*/
+  width: 100% !important;
+  height: auto !important;
+  overflow: auto;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  color: dimgray;
+  text-shadow: 2px 2px #dcdcdc;
+}
+
+.lg-map-wrapper .lg-map-text img {
+  /*  float: left;*/
+  padding-right: 5px;
+  padding-top: 2px;
+}
+
+.lg-map-wrapper .lg-map-text ul {
+  margin-left: 30px;
+}
+
+.tooltip {
+  position: fixed;
+  display: none;
+  padding: 10px 15px;
+  background: #A9A9A9;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #262626;
+  -moz-border-radius: 4px;
+  /* FF1-3.6 */
+  -webkit-border-radius: 4px;
+  /* Saf3-4, iOS 1-3.2, Android <1.6 */
+  border-radius: 4px 4px 4px 4px;
+  /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.mouse-position {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+}
+
+#divergingBar {
+  display: flex;
+  width: 100%;
+  background-color: gainsboro;
+  height: 1.3em;
+}
+
+#divergingBar div {
+  height: 1.3em;
+  width: 0px;
+  -webkit-transition: width 2s;
+  /* Safari */
+  transition: width 2s;
+}
+
+#divergingBar #divergingClinton {
+  background-color: #086FAD;
+}
+
+#divergingBar #divergingNeutral {
+  background-color: #CCCCCC;
+}
+
+#divergingBar #divergingTrump {
+  background-color: #CC2D2D;
+}
+
+#divergingIndexes {
+  display: flex;
+  width: 100%;
+  background-color: whitesmoke;
+  color: black;
+  justify-content: space-between;
+  padding: .8em 1em .5em 1em;
+}
+
+#divergingIndexes .name {
+  font-weight: bolder;
+}
+
+#divergingIndexes #indexesNeutral .name {
+  display: block;
+}
+
+#divergingIndexes #indexesNeutral {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+#divergingIndexes #indexesClinton .number,
+#divergingIndexes #indexesTrump .number {
+  font-size: 2em;
+}
+
+#divergingIndexes #indexesClinton .name,
+#divergingIndexes #indexesTrump .name {
+  font-size: 1.5em;
+}
+
+#divergingIndexes #indexesClinton,
+#divergingIndexes #indexesTrump {
+  align-self: flex-end;
+}
+
+#divergingIndexes #indexesNeutral {
+  color: #616161;
+}
+
+#divergingIndexes #indexesClinton {
+  color: #2a15bd;
+}
+
+#divergingIndexes #indexesTrump {
+  color: #b91919;
+}
+
+.lg-map-wrapper {
+  height: auto;
+}
+
+.versus {
+  display: flex;
+  width: 100%;
+  font-family: 'Bree Serif', serif;
+  font-size: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.versusV {
+  background-color: white;
+  border-radius: 50%;
+  padding: 1em;
+  background: linear-gradient(to right, #086fad 0%, #8c5858 50%, #ffffff 50%, #8c5858 50%, red 100%);
+  display: table-caption;
+  color: white;
+}
+
+.myTooltip {
+  text-decoration: none;
+}
+
+.myTooltip .toolTip {
+  display: none;
+}
+
+.myTooltip:hover div {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+}
+
+.myTooltip .toolTip {
+  background-color: yellow;
+}
+
+.versusClinton {
+  background-color: transparent;
+  line-height: 1em;
+  padding-right: 40px;
+  margin-right: -30px;
+  border-style: solid;
+  border-width: 10px 0px 10px;
+  -moz-border-image: url(stars2.png) 27 repeat;
+  -webkit-border-image: url(stars2.png) 27 repeat;
+  -o-border-image: url(stars2.png) 27 repeat;
+  border-image: url(stars2.png) 27 fill repeat;
+}
+
+.versusClinton p {
+  padding: .4em;
+  background-color: #086fad;
+  padding-right: 40px;
+  margin: 5px -30px 3px -100%;
+  text-align: right;
+  text-shadow: none;
+  color: white;
+}
+
+.versusTrump {
+  background-color: transparent;
+  line-height: 1em;
+  padding-left: 40px;
+  margin-left: -30px;
+  border-style: solid;
+  border-width: 10px 0px 10px;
+  -moz-border-image: url(stars2.png) 27 repeat;
+  -webkit-border-image: url(stars2.png) 27 repeat;
+  -o-border-image: url(stars2.png) 27 repeat;
+  border-image: url(stars2.png) 27 fill repeat;
+}
+
+.versusTrump p {
+  padding: .4em;
+  background-color: red;
+  padding-right: 40px;
+  margin: 5px -100% 3px -25px;
+  z-index: 2;
+  text-shadow: none;
+  color: white;
+}
+
+.versusV {
+  z-index: 1;
+}
+
+.versusV span {
+  color: white;
+  line-height: .4em;
+  font-size: 2em;
+  display: table-caption;
+  font-size: 3em;
+  position: relative;
+  border-style: solid;
+}
+
+.popcornBody {
+  background-color: #FF5722;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: none;
+}
+
+.popcornBody .popcornContainer {
+  padding: 5vw;
+  border: 1vw solid white;
+  border-radius: 50%;
+  animation: colorchange 50s infinite;
+  -webkit-animation: colorchange 50s infinite;
+}
+
+.popcornContainer img {
+  max-width: 256px;
+  width: 100%;
+  height: auto;
+}
+
+.popcornBody p {
+  font-family: 'Dosis', sans-serif;
+  font-size: 15vh;
+  color: white;
+  text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #b90000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+  padding-top: .4em;
+}
+
+.highslide-container div {
+  color: black;
+}
+
+.draggable-header .highslide-header .highslide-close a {
+  background-image: url('../assets/images/closeX.gif') !important;
+}
+
+@keyframes colorchange {
+  0% {
+    background: #d32f2f;
+  }
+  25% {
+    background: #FBC02D;
+  }
+  50% {
+    background: #1976D2;
+  }
+  75% {
+    background: #388E3C;
+  }
+  100% {
+    background: #d32f2f;
+  }
+}
+
+@-webkit-keyframes colorchange
+/* Safari and Chrome - necessary duplicate */
+
+{
+  0% {
+    background: #d32f2f;
+  }
+  25% {
+    background: #FBC02D;
+  }
+  50% {
+    background: #1976D2;
+  }
+  75% {
+    background: #388E3C;
+  }
+  100% {
+    background: #d32f2f;
+  }
+}
+
+#stripe {
+  position: absolute;
+}
+
+.stripeBg {
+  top: -3em;
+  right: -6em;
+  padding: 0 6em;
+  transform: rotate(30deg);
+  transform-origin: 0% 0;
+  position: fixed;
+  background: black;
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  line-height: 40px;
+}
+
+.backImage {
+  width: auto;
+  height: 100%;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.backHillary,
+.backTrump {
+  position: fixed;
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+}
+
+.backHillary {
+  left: -35%;
+}
+
+.backTrump {
+  right: -35%;
+}
+
+.backTrump .backImage {
+  float: right;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Droid Sans', sans-serif;
+  background: #F5F5F5;
+  font-size: 14px;
+  line-height: 21px;
+  height: 100%;
+  color: white;
+  background-image: url('http://hotshotthemes.com/wp-content/uploads/2016/06/red-white-and-blue-restaurant-minimalist-decoration-on-wall-design-ideas.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: 960px;
+  padding-top: 1.5em;
+  margin: 0px auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 420px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 300px;
+  }
+}
+
+a img {
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 26px;
+  line-height: 32px;
+  text-align: center;
+}
+
+p,
+ul {
+  margin-bottom: 10px;
+}
+
+.chartContainer {
+  padding-top: 30vh;
+}
+
+@media (max-width: 828px) {
+  .versus {
+    font-size: 2em;
+  }
+  .versusTrump p {
+    margin: 5px -100% 3px -21px;
+  }
+}
+
+@media (max-width: 576px) {
+  .versusTrump p {
+    padding-left: 15px;
+    margin: 5px -0% 3px -25px;
+  }
+  .versusClinton p {
+    margin: 5px -30px 3px -0%;
+  }
+}

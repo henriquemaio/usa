@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>USA Fight</title>
+    <meta name="description" content="USA Fight">
+
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Droid+Sans" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" type="text/css" />
+    
+
+   
+    <!-- End Demo scripts -->
+
+    <!-- Jquery is required, embed on your page if not already - don't embed 2 versions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+    <!-- End Jquery -->
+
+    <!-- Map scripts - add the below to your page -->
+    <link href="lg-map/map.css" rel="stylesheet" type="text/css" />
+
+  
+
+</head>
+
+<body>
+    <div id="divergingIndexes">
+        <div id="indexesClinton" class="myTooltip">
+            <span class="number">211</span>
+            <span class="name">Clinton</span>
+            <div class="toolTip">Hillary</div>
+        </div>
+        <div id="indexesNeutral" class="myTooltip">
+            <span class="name">Neutral</span>
+            <span class="number">163</span>
+            <div class="toolTip">Neutral</div>
+        </div>
+        <div id="indexesTrump" class="myTooltip">
+            <span class="name">Trump</span>
+            <span class="number">164</span>
+            <div class="toolTip">Trump</div>
+        </div>
+    </div>
+    <div id="divergingBar">
+        <div id="divergingClinton"></div>
+        <div id="divergingNeutral"></div>
+        <div id="divergingTrump"></div>
+    </div>
+  <div class="backHillary">
+    <img src="hillary2.png" class="backImage">
+  </div>
+    <div class="backTrump">
+      <img src="trump2.png" class="backImage">
+  </div>
+  
+    <div class="container chartContainer">
+
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<!-- Additional files for the Highslide popup effect -->
+<script src="https://www.highcharts.com/samples/static/highslide-full.min.js"></script>
+<script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+    
+    </div>
+   
+   
+    
+</body>
+
+</html>
