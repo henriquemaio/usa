@@ -416,6 +416,13 @@ body {
   }
 }
 
+@media (max-width: 1200px) 
+{
+  .backHillary, .backTrump {
+    display: none !important;
+  }
+}
+
 a img {
   border: none;
 }
@@ -441,7 +448,7 @@ ul {
 }
 
 .chartContainer {
-  padding-top: 30vh;
+  padding-top: 10vh;
 }
 
 @media (max-width: 828px) {
