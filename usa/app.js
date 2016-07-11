@@ -1,3 +1,6 @@
+// Load .env config
+require('dotenv').config();
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -58,6 +61,12 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+var port = process.env.SERVER_PORT || 3000;
+app.listen(port, function () {
+  console.log('Account app listening on port ' + port);
+});
+
 
 
 module.exports = app;
