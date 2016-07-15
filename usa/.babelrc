@@ -1,4 +1,8 @@
 {
 	"presets": ["es2015", "stage-2"],
-	"plugins":[]
+  "plugins": [
+      "transform-runtime",
+      "transform-async-to-generator",
+      "transform-async-to-module-method"
+    ]
 }
