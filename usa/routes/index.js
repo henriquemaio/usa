@@ -42,8 +42,10 @@ async function getByMonth(req, res, next) {
      });
     let csv = "data,trump,clinton\n";
     for(var day in groupByDay){
-      var date = new Date(2016, month -1, day);
-      csv += date+','+ groupByDay[day]['hillary'].avg.toFixed(2)+ ',' + groupByDay[day]['trump'].avg.toFixed(2) + '\n';
+      let date = new Date(2016, month -1, day);
+      let hillary = groupByDay[day]['hillary'] && groupByDay[day]['hillary'].avg.toFixed(2) || "0";
+      let trump = groupByDay[day]['trump'] && groupByDay[day]['trump'].avg.toFixed(2) || "0";
+      csv += date + ',' + hillary + ',' + trump + '\n';
     }
     return res.json({payload:{month: month, data: groupByDay, csv: csv}});
   });
@@ -82,10 +84,13 @@ async function getByDay(req,res) {
         groupByHour[doc._id.hour][doc._id.candidate] = element;
       }
     }));
+    console.log(groupByHour);
     let csv = "data,trump,clinton\n";
     for(var hour in groupByHour){
-      var date = new Date(2016, month -1, day, hour);
-      csv += date + ',' + groupByHour[hour]['hillary'].avg.toFixed(2)+ ',' + groupByHour[hour]['trump'].avg.toFixed(2) + '\n';
+      let date = new Date(2016, month -1, day, hour);
+      let hillary = groupByHour[hour]['hillary'] && groupByHour[hour]['hillary'].avg.toFixed(2) || "0";
+      let trump = groupByHour[hour]['trump'] && groupByHour[hour]['trump'].avg.toFixed(2) || "0";
+      csv += date + ',' + hillary + ',' + trump + '\n';
     }
     return res.json({payload: {date: {month: month, day: day}, data: groupByHour, csv: csv}});
   });
