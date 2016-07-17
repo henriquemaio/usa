@@ -13,7 +13,6 @@ router
 
 async function getByMonth(req, res, next) {
   const month = parseInt(req.params.month);
-  console.log(month);
   const data = hourstats
           .aggregate([
             {"$match": {month: month}},
@@ -84,7 +83,6 @@ async function getByDay(req,res) {
         groupByHour[doc._id.hour][doc._id.candidate] = element;
       }
     }));
-    console.log(groupByHour);
     let csv = "data,trump,clinton\n";
     for(var hour in groupByHour){
       let date = new Date(2016, month -1, day, hour);
@@ -108,7 +106,6 @@ async function getTotal(req, res) {
       element[doc._id] = {
         count: doc.count
       };
-      console.log(element);
     });
     res.json({payload: element});
   });
