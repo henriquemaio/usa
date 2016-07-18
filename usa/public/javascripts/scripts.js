@@ -141,7 +141,7 @@ $(function () {
 
   // Get the CSV and create the chart
   var month = 7;
-  var interval = 30 * 24 * 3600 * 1000;
+  var interval =  24 * 3600 * 1000;
   $.getJSON('/api/bymonth/'+ month , function (json) {
 
     loadCharts(json.payload.csv, interval, loadDay);
