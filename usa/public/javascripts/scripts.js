@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$( document ).ready(function() { 
   updateDiverging();
 
   var tooltips = document.querySelectorAll('.myTooltip .toolTip');
@@ -108,6 +108,27 @@ $(function () {
         shadow: false
       }
     },
+    exporting: {
+            buttons: {
+                backButton: {
+                  x: 5,
+                align: 'left',
+                    onclick: function () {
+                      console.log('this');
+                        var month = 7;
+  var interval =  24 * 3600 * 1000;
+  $.getJSON('/api/bymonth/'+ month , function (json) {
+
+    loadCharts(json.payload.csv, interval, loadDay);
+
+
+  });
+
+                    },
+                    symbol: 'url(images/backarrow.png)'
+                }
+            }
+        },
 
     // Highstock specific
     navigator: {

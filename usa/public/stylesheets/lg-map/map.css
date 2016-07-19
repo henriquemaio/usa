@@ -172,6 +172,11 @@
   text-decoration: none;
 }
 
+.myTooltip ul {
+  font-size: 1.1em;
+  text-align: left;
+}
+
 .myTooltip .toolTip {
   display: none;
 }
@@ -183,7 +188,15 @@
 }
 
 .myTooltip .toolTip {
-  background-color: yellow;
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+}
+
+.tipTitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
 }
 
 .versusClinton {
@@ -278,6 +291,14 @@
   padding-top: .4em;
 }
 
+.popcorn {
+  width: 100%;
+  color: black;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+}
+
 .highslide-container div {
   color: black;
 }
@@ -346,7 +367,7 @@
   width: auto;
   height: 100%;
   overflow: hidden;
-  z-index: 3;
+  z-index: 6;
 }
 
 .backHillary,
